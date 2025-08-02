@@ -48,11 +48,11 @@ npm install pnpm -g
 
 ```bash
 # Client
-cd apps/we-dev-client
+cd apps/fastcodr-client
 pnpm install
 
 # Server
-cd apps/we-dev/we-dev-next
+cd apps/fastcodr/fastcodr-next
 pnpm install
 
 ```
@@ -61,7 +61,7 @@ pnpm install
 
 Rename .env.example to .env and fill in the corresponding content.
 
-Client apps/we-dev-client/.env
+Client apps/fastcodr-client/.env
 ```shell
 # SERVER_ADDRESS [MUST*] (eg: http://localhost:3000)
 APP_BASE_URL=
@@ -70,7 +70,7 @@ APP_BASE_URL=
 JWT_SECRET=
 ```
 
-Servers apps/we-dev-next/.env
+Servers apps/fastcodr-next/.env
 ```shell
 # Third-Party Model URL [MUST*] (eg: https://api.openai.com/v1)
 THIRD_API_URL=
@@ -86,17 +86,17 @@ JWT_SECRET=
 ## Build the Web Editor
 
 ```bash
-chmod +x scripts/wedev-build.sh
+chmod +x scripts/fastcodr-build.sh
 
-./scripts/wedev-build.sh
+./scripts/fastcodr-build.sh
 ```
 
 **Quick Start Method**
 Supports quick start from the root directory.
 
 ```bash
-"dev:next": "cd apps/we-dev-next && pnpm install && pnpm dev",
-"dev:client": "cd apps/we-dev-client  && pnpm dev",
+"dev:next": "cd apps/fastcodr-next && pnpm install && pnpm dev",
+"dev:client": "cd apps/fastcodr-client  && pnpm dev",
 ```
 
 
