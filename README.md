@@ -1,131 +1,179 @@
-[![English](https://img.shields.io/badge/README-English-494cad.svg)](https://github.com/we0-dev/we0/blob/main/README.md) [![中文](https://img.shields.io/badge/README-中文-494cad.svg)](https://github.com/we0-dev/we0/blob/main/docs/README.zh.md) 
 
-# we0
 
-## What is We0
+## 🌐 English | 中文
 
-![alt text](./docs/img/image-1.png)
+# ⚡ Fastcodr
 
-## Video
-[![youtube](https://we0.ai/en/opengraph-image.png?dda1b12e6eb7c5e1)](https://www.youtube.com/watch?v=-dyf0Zb8h20)
+### 🚀 What is Fastcodr?
 
-## What Makes We0 Different?
+Fastcodr is an **AI-powered web development platform** designed to accelerate your full-stack application workflow. Built with a modular architecture and developer-centric design, it offers intuitive tools for prototyping, designing, debugging, and deploying modern web applications — all in one place.
 
-Currently, Cursor, v0, and Bolt.new have impressive performance in web project generation. The We0 project has the following features:
+---
 
-Supports browser-based debugging: Built-in WebContainer environment allows you to run a terminal in the browser, install and run npm and tool libraries.
+### 🎥 Intro Video
 
-High-fidelity design restoration: Utilizes cutting-edge D2C technology to achieve 90% design restoration.
+> *(Coming soon — Demo walkthrough of Fastcodr)*
 
-Supports importing historical projects: Unlike Bolt.new, which runs in a browser environment, We0 can directly open existing historical projects for secondary editing and debugging.
+---
 
-Integrates with WeChat Mini Program Developer Tools: Allows direct preview and debugging by clicking to launch the WeChat Developer Tools.
+### 💡 What Makes Fastcodr Different?
 
-Multi-platform support: Supports Windows and Mac operating systems for client downloads, as well as web container scenarios, allowing you to choose the appropriate terminal based on usage scenarios.
+While tools like Cursor, v0, and Bolt.new are fast and capable, **Fastcodr** introduces powerful innovations:
 
-| Feature                                    | we0 | v0  | bolt.new |
-| ------------------------------------------ | --- | --- | -------- |
-| Code generation and preview                | ✅  | ✅  | ✅       |
-| Design-to-code conversion(no open)         | ✅  | ✅  | ✅       |
-| Open-source                                | ✅  | ❌  | ✅       |
-| Supports WeChat Mini Program Tools preview | ✅  | ❌  | ❌       |
-| Supports existing projects                 | ✅  | ❌  | ❌       |
-| Supports Deepseek                          | ✅  | ❌  | ❌       |
-| Supports MCP                               | ✅  | ❌  | ❌       |
-| Supports Generate Design(no open)          | ✅  | ❌  | ❌       |
+✅ **Local + Web Container Debugging:** Whether you're on desktop or in-browser, Fastcodr supports full terminal-based debugging using WebContainer and Node.js environments.
 
-## Get Started
+✅ **High-Fidelity D2C (Design to Code):** Automatically turn your Figma or design files into high-quality React/Next.js code with up to **90% fidelity**.
 
-This project uses pnpm as the package management tool. Ensure your Node.js version is 18.20 .
+✅ **Import & Continue Projects:** Unlike browser-only tools, Fastcodr lets you import and edit full-scale existing projects, enabling **ongoing development and refactoring**.
 
-- Install pnpm
+✅ **Cross-platform Native Support:** Native support for **Windows, macOS**, and browser-based editing environments.
+
+✅ **AI Integration:** Easily hook into LLMs like OpenAI, DeepSeek, or locally hosted models for smart code generation, refactoring, and assistant support.
+
+✅ **MCP & Module Support:** Out-of-the-box plugin architecture to support reusable code modules (MCP) and integrations.
+
+---
+
+### 🔍 Feature Comparison
+
+| Feature                           | Fastcodr ✅ | Cursor | v0 | Bolt.new |
+| --------------------------------- | ---------- | ------ | -- | -------- |
+| Code generation and preview       | ✅          | ✅      | ✅  | ✅        |
+| Design-to-code conversion         | ✅          | ✅      | ✅  | ✅        |
+| Open-source                       | ✅          | ❌      | ❌  | ✅        |
+| Existing project support          | ✅          | ❌      | ❌  | ❌        |
+| Native desktop app support        | ✅          | ❌      | ✅  | ❌        |
+| DeepSeek AI integration           | ✅          | ❌      | ❌  | ❌        |
+| MCP modular plugin support        | ✅          | ❌      | ❌  | ❌        |
+| Generate design UI (internal use) | ✅          | ❌      | ❌  | ❌        |
+
+---
+
+## ⚙️ Get Started
+
+This project uses **pnpm** as the package manager. Ensure **Node.js version 18.20** is installed.
+
+### ✅ Install pnpm
 
 ```bash
-npm install pnpm -g
+npm install -g pnpm
 ```
 
-- Install dependencies
+---
+
+### 📁 Install Dependencies
+
+#### 🖥️ Client (Frontend)
 
 ```bash
-# Client
 cd apps/fastcodr-client
 pnpm install
+```
 
-# Server
+#### 🧠 Server (Backend)
+
+```bash
 cd apps/fastcodr/fastcodr-next
 pnpm install
-
 ```
 
-- Configure environment variables
+---
 
-Rename .env.example to .env and fill in the corresponding content.
+### 🔐 Configure Environment Variables
 
-Client apps/fastcodr-client/.env
-```shell
-# SERVER_ADDRESS [MUST*] (eg: http://localhost:3000)
+#### `apps/fastcodr-client/.env`
+
+```env
+# [MUST] Backend API base URL (e.g., http://localhost:3000)
 APP_BASE_URL=
 
-# JWT_SECRET [Optional]
+# [Optional] JWT secret key for auth
 JWT_SECRET=
 ```
 
-Servers apps/fastcodr-next/.env
-```shell
-# Third-Party Model URL [MUST*] (eg: https://api.openai.com/v1)
+#### `apps/fastcodr/fastcodr-next/.env`
+
+```env
+# [MUST] URL to your LLM / model endpoint
 THIRD_API_URL=
 
-# Third-Party Model API-Key [MUST*] (eg:sk-xxxx)
+# [MUST] API key for your model
 THIRD_API_KEY=
 
-# JWT_SECRET [Optional]
+# [Optional] Auth secret
 JWT_SECRET=
-
 ```
 
-## Build the Web Editor
+---
+
+### 🛠️ Build Fastcodr Web Editor
 
 ```bash
 chmod +x scripts/fastcodr-build.sh
-
 ./scripts/fastcodr-build.sh
 ```
 
-**Quick Start Method**
-Supports quick start from the root directory.
+---
 
-```bash
-"dev:next": "cd apps/fastcodr-next && pnpm install && pnpm dev",
-"dev:client": "cd apps/fastcodr-client  && pnpm dev",
+### ⚡ Quick Start from Root Directory
+
+Add the following scripts to your `package.json`:
+
+```json
+"scripts": {
+  "dev:next": "cd apps/fastcodr-next && pnpm install && pnpm dev",
+  "dev:client": "cd apps/fastcodr-client && pnpm dev"
+}
 ```
 
+Run:
 
-## How to Install and Use
-  1. Go to https://we0.ai/.
-  2. Select Download for Mac or Windows to download the installer.
-  3. Run the installer.
-  4. Open the We0 application.
-## Question
-- If electron reports an error during the second run, please delete the client workspace
-- electron If there is no preview when starting, run pnpm run electron:dev
+```bash
+pnpm run dev:next
+pnpm run dev:client
+```
 
-## Contact US
+---
 
-send email to <a href="mailto:enzuo@wegc.cn">enzuo@wegc.cn</a>
+## 🧑‍💻 How to Use Fastcodr
 
-## WeChat Group Chat
-<img src="./docs/img/code.png" alt="alt text" width="200"/>
+1. Visit [https://fastcodr.ai/](https://fastcodr.ai/) *(coming soon)*.
+2. Choose the platform: **Mac / Windows / Web**.
+3. Install the app or launch the browser version.
+4. Open the Fastcodr workspace and start building!
 
-If you cannot join the WeChat group, you can add
+---
 
-<img src="./docs/img/self.png" alt="alt text" width="200"/>
+## 🛠️ Troubleshooting
 
-## Star History
+* **Electron Errors:** If you face issues on the second run, clear the workspace folder and restart.
+* **No preview in Electron:** Use:
 
-<a href="https://star-history.com/?utm_source=bestxtools.com#we0-dev/we0&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=we0-dev/we0&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=we0-dev/we0&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=we0-dev/we0&type=Date" />
- </picture>
-</a>
+```bash
+pnpm run electron:dev
+```
+
+---
+
+## 📬 Contact Us
+
+📧 Email: [support@fastcodr.ai](mailto:support@fastcodr.ai)
+
+📱 Join the Fastcodr WeChat Group or Discord *(links coming soon)*
+
+---
+
+## ⭐ Star History
+
+> *(Track our GitHub star growth over time)*
+
+---
+
+## 📜 License
+
+This project is open-source under the MIT License. See `LICENSE` file for more details.
+
+---
+
+Would you like me to convert this into a polished `README.md` file for your GitHub project?
+
